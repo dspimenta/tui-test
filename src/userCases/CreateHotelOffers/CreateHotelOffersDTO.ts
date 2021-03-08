@@ -5,7 +5,7 @@ export interface ICreateHotelOffersRequestDTO {
     meta: Meta;
 }
 
-export interface HotelOffers {
+  class HotelOffers {
     type: string;
     hotel: Hotel;
     available: boolean;
@@ -13,7 +13,7 @@ export interface HotelOffers {
     self: string;
 }
 
-export interface Hotel {
+ class Hotel {
     type: string;
     hotelId: string;
     chainCode: string;
@@ -31,25 +31,25 @@ export interface Hotel {
     media: Media[];
 }
 
-export interface Address {
+class Address {
     lines: string[];
     postalCode: string;
     cityName: string;
     countryCode: string;
 }
 
-export interface Contact {
+class  Contact {
     phone: string;
     fax: string;
     email?: string;
 }
 
-export interface Description {
+class Description {
     lang?: string;
     text: string;
 }
 
-export interface HotelDistance {
+class HotelDistance {
     distance: number;
     distanceUnit: string;
 }
@@ -59,7 +59,7 @@ export interface Media {
     category: string;
 }
 
-export interface Offer {
+class Offer {
     id: string;
     checkInDate: Date;
     checkOutDate: Date;
@@ -73,36 +73,36 @@ export interface Offer {
     commission?: Commission;
 }
 
-export interface Commission {
+class Commission {
     amount: string;
     percentage: string;
 }
 
-export interface Guests {
+class Guests {
     adults: number;
 }
 
-export interface Policies {
+class Policies {
     guarantee?: Guarantee;
     paymentType: string;
     cancellation: Cancellation;
 }
 
-export interface Cancellation {
+class Cancellation {
     numberOfNights?: number;
     deadline: Date;
 }
 
-export interface Guarantee {
+class Guarantee {
     acceptedPayments: AcceptedPayments;
 }
 
-export interface AcceptedPayments {
+class AcceptedPayments {
     creditCards: string[];
     methods: string[];
 }
 
-export interface Price {
+class Price {
     currency: string;
     base?: string;
     total: string;
@@ -110,7 +110,7 @@ export interface Price {
     variations: Variations;
 }
 
-export interface Tax {
+class Tax {
     code: string;
     pricingFrequency: string;
     pricingMode: string;
@@ -120,43 +120,43 @@ export interface Tax {
     currency?: string;
 }
 
-export interface Variations {
+class Variations {
     average: Average;
     changes: Change[];
 }
 
-export interface Average {
+class Average {
     base: string;
 }
 
-export interface Change {
+class Change {
     startDate: Date;
     endDate: Date;
     base?: string;
     total?: string;
 }
 
-export interface RateFamilyEstimated {
+class RateFamilyEstimated {
     code: string;
     type: string;
 }
 
-export interface Room {
+class Room {
     type: string;
     typeEstimated: TypeEstimated;
     description: Description;
 }
 
-export interface TypeEstimated {
+class TypeEstimated {
     category?: string;
     beds?: number;
     bedType?: string;
 }
 
-export interface Meta {
+class Meta {
     links: Links;
 }
 
-export interface Links {
+class Links {
     next: string;
 }

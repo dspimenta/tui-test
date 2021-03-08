@@ -29,14 +29,14 @@ class ExternalApiUsingRequest implements IExternalAmadeusApiService {
     let body: any;
     const options = {
       method: "POST",
-      url: "https://test.api.amadeus.com/v1/security/oauth2/token",
+      url: process.env.AUTH_API,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       form: {
         grant_type: "client_credentials",
-        client_id: "WATyUCMvpypbxyWc9xGjzCgmXtd6oG5b",
-        client_secret: "eDD3ktUTeZAQGAsA"
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET
       }
     };
     request(options, (error, response) => {
@@ -55,7 +55,7 @@ class ExternalApiUsingRequest implements IExternalAmadeusApiService {
     let body: any;
     var options = {
       method: "GET",
-      url: "https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=PAR&roomQuantity=1&adults=2&radius=5&radiusUnit=KM&paymentPolicy=NONE&includeClosed=false&bestRateOnly=true&view=FULL&sort=NONE",
+      url: process.env.API_REQUEST_HOTEL_OFFERS,
       headers: {
         Authorization: `Bearer ${token}`
       }

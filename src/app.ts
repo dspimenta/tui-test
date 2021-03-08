@@ -21,7 +21,7 @@ class App {
     }
 
     private database(): void {
-        mongoose.connect("mongodb+srv://dspimenta:romanos007@cluster0.nby7p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true });
+        mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true });
     }
 
     private routes(): void {
